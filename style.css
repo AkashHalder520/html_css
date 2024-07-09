@@ -1,0 +1,36 @@
+.grid-container{
+    border: 2px solid black;
+    height: 200px;
+    width: 500px;
+    display: grid;
+    
+    /* this will make each boxes 150 px respectively */
+    /* grid-template-columns: 150px 150px 150px 150px; */
+
+    /* this 1fr means 1frame rate it will take full  available width  in this case 3rd column will be bigger*/
+    /* grid-template-columns: 1fr 1fr 3fr 1fr; */
+    
+    /* repeat 1fr 4 times */
+    grid-template-columns: repeat(4,1fr);
+
+    grid-gap: 2px;
+}
+.item{
+    border: 2px solid pink;
+}
+#header{
+    background-color: aqua;
+    /* moving the box to 2nd row */
+    /* grid-row-start: 2;
+    grid-row-end: 3; */
+      /* this can be also done   */
+grid-row: 1/2;
+grid-column: 1/5;
+
+    /* moving to other column */
+    /* grid-column-start: -2;
+    grid-column-end: -3; */
+
+    /* for better understanding go to inspect->layout->check the div container  of grid */
+
+}
