@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-    <div className="bg-amber-50 h-screen p-4">
+    <div className="bg-amber-50 h-screen p-4 lg: flex flex-col items-center">
     <Header/>
     <Body/>
     <Footer/>
