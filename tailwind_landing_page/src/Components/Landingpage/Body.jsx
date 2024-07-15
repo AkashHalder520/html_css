@@ -20,9 +20,11 @@ const Body = () => {
                     <input className='rounded-md px-4 py-3' type="email" name="" id="" placeholder='Enter your email' />
                     <button className='bg-blue-400 hover:bg-blue-600 text-white rounded-md px-4 py-3 '>Join Waitlist</button>
                 </form>
-                <input className="form-checkbox h-5 w-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500" type="checkbox" name="Term&condition" id="" />
+                <div className='flex flex-row items-center py-3'>
+                <input className="form-checkbox  h-5 w-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500" type="checkbox" name="Term&condition" id="" />
 
-                <label htmlFor="Term&condition">Accept Terms&condition</label>
+                <label htmlFor="Term&condition" className="ml-2 text-gray-700">Accept Terms&condition</label>
+                </div>
             </div>
         </div>
     )
