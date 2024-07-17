@@ -7,7 +7,7 @@ const Header = () => {
     return (
         <>
 
-            <div className='flex justify-between items-center my-3 lg:w-4/5'>
+            <div className='flex justify-between items-center my-3 w-4/5 lg:w-4/5'>
                 <div className='flex gap-2'>
                     <img src='./src/assets/Logo.svg' alt="logo" />
                     <button className='bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-full px-2.5 py-0.5 text-white '>Hoster is hiring</button>
@@ -16,7 +16,7 @@ const Header = () => {
                     <GiHamburgerMenu />
                 </div>
                 {/* if large screen then  */}
-                <div className='flex justify-between basis-2/3'>
+                <div className='flex justify-between items-center basis-2/3  hidden lg:flex'>
                     <div>
                         <ul className='font-lato flex gap-10 text-gray-400'>
                             <li>
@@ -30,7 +30,7 @@ const Header = () => {
                             </li>
                         </ul>
                     </div>
-                    <div>
+                    <div className='flex items-center gap-4'>
                         <a href="">Sign IN</a>
                         <button className='bg-blue-400 hover:bg-blue-600 text-white rounded-md px-4 py-3 '>Join Waitlist</button>
                     </div>
