@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            position:absolute;
+        }
+        .canvas{
+            border: 2px solid black;
+        }
+        .top, .bottom{
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0 20px 0;
+
+        }
+        .black ,input ,select, button{
+            width: 80%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="top">
+
+            <div class="black">
+                <p>colour picker</p>
+                <input type="color" class="form-control" name="" id="colorPicker"/>
+            </div>
+            <div class="black">
+                <p>Background</p>
+                <input type="color" class="form-control" name="" id="canvasColor">
+            </div>
+            <div class="black">
+                <p>Font size</p>
+                <select name="" id="fontSize">
+                    <option value="5">5px</option>
+                    <option value="10">10px</option>
+                    <option value="20">20px</option>
+                    <option value="30">30px</option>
+                </select>
+            </div>
+        </div>
+        <canvas class="canvas" id="myCanvas" width="800" height="500"></canvas>
+        <div class="bottom">
+            <button class="btn-clear">Clear</button>
+            <button class="btn-save">Save & download</button>
+            <button class="btn-clear">Retrive Save signature</button>
+        </div>
+    </div>
+</body>
+</html>
