@@ -37,7 +37,7 @@
             </div>
             <div class="black">
                 <p>Font size</p>
-                <select name="" id="fontSize">
+                <select name="" id="fontPicker">
                     <option value="5">5px</option>
                     <option value="10">10px</option>
                     <option value="20">20px</option>
@@ -52,5 +52,55 @@
             <button class="btn-clear">Retrive Save signature</button>
         </div>
     </div>
+    <script>
+        const colorPicker = document.querySelector('#colorPicker');
+        const canvasColor = document.querySelector('#canvasColor');
+        const myCanvas= document.querySelector('#myCanvas');
+        const clearButton= document.querySelector(".btn-clear")
+        const saveButton= document.querySelector('.btn-save');
+        const fontPicker= document.querySelector('#fontPicker')
+        
+        const canvas=document.getElementById('myCanvas');
+        //The getContext method in JavaScript is primarily associated with the HTML5 <canvas> element.
+        // It is used to get the rendering context and its drawing functions. 
+        //This method allows you to draw shapes, text, images, and other objects.
+        const context= canvas.getContext('2d')
+        let isDrawing;
+        console.log(context,"hjkh");
+//when change the colour
+        colorPicker.addEventListener('change',(e)=>{
+            context.strokeStyle=e.target.value
+            context.fillStyle=e.target.value
+            console.log(context,'ddd');
+        })
+
+        canvas.addEventListener('mousedown',(e)=>{
+            isDrawing =true;
+            console.log(e);
+            lastX=e.offsetX// geting the point where mouse is clicked
+            lastY=e.offsetY
+        })
+        canvas.addEventListener('mousemove',(e)=>{
+            if(isDrawing){
+                context.beginPath() //optional
+                context.moveTo(lastX,lastY)
+                // if we dont give the above it will keep connecting the last place of mouse up
+                console.log(lastX,'sdf');
+                
+                context.lineTo(e.offsetX,e.offsetY);
+                context.stroke()
+
+                lastX=e.offsetX
+                console.log(lastX,'dsddd');
+                
+                lastY=e.offsetY
+            }
+        })
+        canvas.addEventListener('mouseup',(e)=>{
+            isDrawing = false;
+        })
+        
+        
+    </script>
 </body>
 </html>
