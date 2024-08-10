@@ -49,7 +49,6 @@
         <div class="bottom">
             <button class="btn-clear">Clear</button>
             <button class="btn-save">Save & download</button>
-            <button class="btn-clear">Retrive Save signature</button>
         </div>
     </div>
     <script>
@@ -59,7 +58,6 @@
         const clearButton= document.querySelector(".btn-clear")
         const saveButton= document.querySelector('.btn-save');
         const fontPicker= document.querySelector('#fontPicker')
-        
         const canvas=document.getElementById('myCanvas');
         //The getContext method in JavaScript is primarily associated with the HTML5 <canvas> element.
         // It is used to get the rendering context and its drawing functions. 
@@ -92,15 +90,33 @@
 
                 lastX=e.offsetX
                 console.log(lastX,'dsddd');
-                
                 lastY=e.offsetY
             }
         })
         canvas.addEventListener('mouseup',(e)=>{
             isDrawing = false;
         })
+        canvasColor.addEventListener('change',(e)=>{
+            context.fillStyle= e.target.value;
+            context.fillRect(0,0,canvas.width,canvas.height)//area of the canvas
+        })
+
+        fontPicker.addEventListener('change',(e)=>{
+            context.lineWidth= e.target.value
+        })
         
-        
+        clearButton.addEventListener('click',()=>{
+            context.clearRect(0,0,canvas.width, canvas.height)
+        })
+
+        saveButton.addEventListener('click',()=>{
+            const image = canvas.toDataURL('image/png');
+            // toDataURL(): This is a method provided by the HTML Canvas API. When called, it generates a data URL containing a representation of the image. A data URL is a base64-encoded string that represents a file (in this case, an image).
+            const link = document.createElement('a');// temporary link is created to download
+            link.href = image;
+            link.download = 'canvas-image.png';
+            link.click(); //automatic click
+        })
     </script>
 </body>
 </html>
